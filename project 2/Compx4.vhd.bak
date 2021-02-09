@@ -1,0 +1,37 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity Comparator_2 is port ( 
+	DIN1		:	in std_logic;
+	DIN2		:	in std_logic;
+	DOUT1		:	out std_logic;	-- A < B
+	DOUT2		:	out std_logic;	-- A = B
+	DOUT3		:	out std_logic	-- A > B
+);
+end entity Comparator_2;
+
+architecture Choice of Comparator_2 is
+
+	component Compx1 is port ( 
+		DIN1		:	in std_logic;
+		DIN2		:	in std_logic;
+		DOUT1		:	out std_logic;	-- A < B
+		DOUT2		:	out std_logic;	-- A = B
+		DOUT3		:	out std_logic	-- A > B
+	);
+	end component;
+	
+	signal A : std_logic;
+	signal B : std_logic;
+
+begin
+
+	A <= DIN1;
+	B <= DIN2;
+	
+	DOUT1 <= (NOT A) AND B;
+	DOUT2 <= (A AND B) OR ((NOT A) AND (NOT B));
+	DOUT3 <= A AND (NOT B);
+
+end architecture Choice;

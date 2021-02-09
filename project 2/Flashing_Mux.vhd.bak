@@ -1,0 +1,31 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity mux2 is port ( 
+	pb3		:	in std_logic;
+	Current_Temp		:	in std_logic_vector(3 downto 0);
+	Desired_Temp		:	in std_logic_vector(7 downto 4);
+	DOUT_1		:	out std_logic_vector(3 downto 0);		--Current Temp
+	DOUT_2		:	out std_logic_vector(7 downto 4);		--Changed Desired Temp
+	DOUT_3		:	out std_logic_vector(7 downto 7)			--led[7]
+);
+end entity mux2;
+
+architecture Choice of mux2 is
+
+	signal inverted_pb3 : std_logic;
+
+begin
+
+	inverted_pb3 <= NOT pb3;	-- to invert push buttons
+	
+	DOUT_1 	<=	Current_Temp;
+	
+	DOUT_2	<= "0100" when inverted_pb3 = '1'
+					else Desired_Temp;
+	
+	DOUT_3	<= "1" when inverted_pb3 = '1'
+					else "0";
+
+end architecture Choice;

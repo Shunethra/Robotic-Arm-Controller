@@ -1,0 +1,56 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+library work;
+
+entity Comparator is port ( 
+	Current_Temp			:	in std_logic_vector(3 downto 0);
+	Desired_Temp_2			:	in std_logic_vector(7 downto 4);
+	win_door				:	in std_logic_vector(5 downto 4);
+	leds0					:	out std_logic_vector(0 downto 0);
+	leds1					:	out std_logic_vector(1 downto 1);
+	leds2					:	out std_logic_vector(2 downto 2);
+	leds3					:	out std_logic_vector(3 downto 3);
+	greater           :	out std_logic;
+	lesser            :	out std_logic;
+	equal             :	out std_logic
+);
+end entity Comparator;
+
+architecture Choice of Comparator is
+
+	component Compx4 is port ( 
+	A		:	in std_logic_vector(3 downto 0);
+	B		:	in std_logic_vector(7 downto 4);
+	ALTB		:	out std_logic;	-- A < B
+	AEQB		:	out std_logic;	-- A = B
+	AGTB		:	out std_logic	-- A > B
+	);
+	end component;
+
+signal AEQB		:	std_logic;
+signal AGTB		:	std_logic;
+signal ALTB		:	std_logic;	
+
+begin
+
+	INST1: Compx4 port map(Current_Temp, Desired_Temp_2, ALTB, AEQB, AGTB);
+	
+	
+	leds0 <= "1" when ( ALTB = '1' AND win_door = "00" )
+					else "0";
+			  
+	leds1 <= "1" when ( AEQB = '1' )
+				  else "0";
+			  
+	leds2 <= "1" when ( AGTB = '1' AND  win_door = "00" )
+			 else "0";
+			 
+	leds3 <= "1" when ( AEQB = '0' AND  win_door = "00" )
+				  else "0";
+
+	greater  <= AGTB;
+	lesser <= ALTB;
+	equal <= AEQB;
+end architecture Choice;
