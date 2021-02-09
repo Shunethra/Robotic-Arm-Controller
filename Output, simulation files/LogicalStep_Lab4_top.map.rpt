@@ -1,0 +1,470 @@
+Analysis & Synthesis report for LogicalStep_Lab4_top
+Mon Jul 27 17:56:24 2020
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |LogicalStep_Lab4_top|Moore_Grappler:moore2inst|current_state
+  9. State Machine - |LogicalStep_Lab4_top|Moore_Extender:moore1inst|current_state
+ 10. State Machine - |LogicalStep_Lab4_top|Mealy_XY:mealyinst|current_state
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Jul 27 17:56:24 2020       ;
+; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
+; Revision Name                      ; LogicalStep_Lab4_top                        ;
+; Top-level Entity Name              ; LogicalStep_Lab4_top                        ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 81                                          ;
+;     Total combinational functions  ; 81                                          ;
+;     Dedicated logic registers      ; 22                                          ;
+; Total registers                    ; 22                                          ;
+; Total pins                         ; 30                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                  ;
++------------------------------------------------------------------+----------------------+----------------------+
+; Option                                                           ; Setting              ; Default Value        ;
++------------------------------------------------------------------+----------------------+----------------------+
+; Device                                                           ; 10M08DAF484C8G       ;                      ;
+; Top-level entity name                                            ; LogicalStep_Lab4_top ; LogicalStep_Lab4_top ;
+; Family name                                                      ; MAX 10               ; Cyclone V            ;
+; Use smart compilation                                            ; Off                  ; Off                  ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                   ; On                   ;
+; Enable compact report table                                      ; Off                  ; Off                  ;
+; Restructure Multiplexers                                         ; Auto                 ; Auto                 ;
+; Create Debugging Nodes for IP Cores                              ; Off                  ; Off                  ;
+; Preserve fewer node names                                        ; On                   ; On                   ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable               ; Enable               ;
+; Verilog Version                                                  ; Verilog_2001         ; Verilog_2001         ;
+; VHDL Version                                                     ; VHDL_1993            ; VHDL_1993            ;
+; State Machine Processing                                         ; Auto                 ; Auto                 ;
+; Safe State Machine                                               ; Off                  ; Off                  ;
+; Extract Verilog State Machines                                   ; On                   ; On                   ;
+; Extract VHDL State Machines                                      ; On                   ; On                   ;
+; Ignore Verilog initial constructs                                ; Off                  ; Off                  ;
+; Iteration limit for constant Verilog loops                       ; 5000                 ; 5000                 ;
+; Iteration limit for non-constant Verilog loops                   ; 250                  ; 250                  ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                   ; On                   ;
+; Infer RAMs from Raw Logic                                        ; On                   ; On                   ;
+; Parallel Synthesis                                               ; On                   ; On                   ;
+; DSP Block Balancing                                              ; Auto                 ; Auto                 ;
+; NOT Gate Push-Back                                               ; On                   ; On                   ;
+; Power-Up Don't Care                                              ; On                   ; On                   ;
+; Remove Redundant Logic Cells                                     ; Off                  ; Off                  ;
+; Remove Duplicate Registers                                       ; On                   ; On                   ;
+; Ignore CARRY Buffers                                             ; Off                  ; Off                  ;
+; Ignore CASCADE Buffers                                           ; Off                  ; Off                  ;
+; Ignore GLOBAL Buffers                                            ; Off                  ; Off                  ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                  ; Off                  ;
+; Ignore LCELL Buffers                                             ; Off                  ; Off                  ;
+; Ignore SOFT Buffers                                              ; On                   ; On                   ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                  ; Off                  ;
+; Optimization Technique                                           ; Balanced             ; Balanced             ;
+; Carry Chain Length                                               ; 70                   ; 70                   ;
+; Auto Carry Chains                                                ; On                   ; On                   ;
+; Auto Open-Drain Pins                                             ; On                   ; On                   ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                  ; Off                  ;
+; Auto ROM Replacement                                             ; On                   ; On                   ;
+; Auto RAM Replacement                                             ; On                   ; On                   ;
+; Auto DSP Block Replacement                                       ; On                   ; On                   ;
+; Auto Shift Register Replacement                                  ; Auto                 ; Auto                 ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto                 ; Auto                 ;
+; Auto Clock Enable Replacement                                    ; On                   ; On                   ;
+; Strict RAM Replacement                                           ; Off                  ; Off                  ;
+; Allow Synchronous Control Signals                                ; On                   ; On                   ;
+; Force Use of Synchronous Clear Signals                           ; Off                  ; Off                  ;
+; Auto RAM Block Balancing                                         ; On                   ; On                   ;
+; Auto RAM to Logic Cell Conversion                                ; Off                  ; Off                  ;
+; Auto Resource Sharing                                            ; Off                  ; Off                  ;
+; Allow Any RAM Size For Recognition                               ; Off                  ; Off                  ;
+; Allow Any ROM Size For Recognition                               ; Off                  ; Off                  ;
+; Allow Any Shift Register Size For Recognition                    ; Off                  ; Off                  ;
+; Use LogicLock Constraints during Resource Balancing              ; On                   ; On                   ;
+; Ignore translate_off and synthesis_off directives                ; Off                  ; Off                  ;
+; Timing-Driven Synthesis                                          ; On                   ; On                   ;
+; Report Parameter Settings                                        ; On                   ; On                   ;
+; Report Source Assignments                                        ; On                   ; On                   ;
+; Report Connectivity Checks                                       ; On                   ; On                   ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                  ; Off                  ;
+; Synchronization Register Chain Length                            ; 2                    ; 2                    ;
+; Power Optimization During Synthesis                              ; Normal compilation   ; Normal compilation   ;
+; HDL message level                                                ; Level2               ; Level2               ;
+; Suppress Register Optimization Related Messages                  ; Off                  ; Off                  ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000                 ; 5000                 ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000                 ; 5000                 ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                  ; 100                  ;
+; Clock MUX Protection                                             ; On                   ; On                   ;
+; Auto Gated Clock Conversion                                      ; Off                  ; Off                  ;
+; Block Design Naming                                              ; Auto                 ; Auto                 ;
+; SDC constraint protection                                        ; Off                  ; Off                  ;
+; Synthesis Effort                                                 ; Auto                 ; Auto                 ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                   ; On                   ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                  ; Off                  ;
+; Analysis & Synthesis Message Level                               ; Medium               ; Medium               ;
+; Disable Register Merging Across Hierarchies                      ; Auto                 ; Auto                 ;
+; Resource Aware Inference For Block RAM                           ; On                   ; On                   ;
++------------------------------------------------------------------+----------------------+----------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                 ;
++----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                    ; Library ;
++----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------+---------+
+; Bidir_shift_reg.vhd              ; yes             ; User VHDL File        ; C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Bidir_shift_reg.vhd      ;         ;
+; U_D_Bin_Counter8bit.vhd          ; yes             ; User VHDL File        ; C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/U_D_Bin_Counter8bit.vhd  ;         ;
+; Mealy_XY.vhd                     ; yes             ; User VHDL File        ; C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Mealy_XY.vhd             ;         ;
+; Moore_Extender.vhd               ; yes             ; User VHDL File        ; C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Moore_Extender.vhd       ;         ;
+; Moore_Grappler.vhd               ; yes             ; User VHDL File        ; C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Moore_Grappler.vhd       ;         ;
+; logicalstep_lab4_top.vhd         ; yes             ; Auto-Found VHDL File  ; C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/logicalstep_lab4_top.vhd ;         ;
+; compx4.vhd                       ; yes             ; Auto-Found VHDL File  ; C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/compx4.vhd               ;         ;
+; compx1.vhd                       ; yes             ; Auto-Found VHDL File  ; C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/compx1.vhd               ;         ;
++----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 81        ;
+;                                             ;           ;
+; Total combinational functions               ; 81        ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 34        ;
+;     -- 3 input functions                    ; 25        ;
+;     -- <=2 input functions                  ; 22        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 75        ;
+;     -- arithmetic mode                      ; 6         ;
+;                                             ;           ;
+; Total registers                             ; 22        ;
+;     -- Dedicated logic registers            ; 22        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 30        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; Clk~input ;
+; Maximum fan-out                             ; 22        ;
+; Total fan-out                               ; 376       ;
+; Average fan-out                             ; 2.31      ;
++---------------------------------------------+-----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                         ;
++----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                     ; Entity Name          ; Library Name ;
++----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------+----------------------+--------------+
+; |LogicalStep_Lab4_top                  ; 81 (0)              ; 22 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 30   ; 0            ; 0          ; |LogicalStep_Lab4_top                                   ; LogicalStep_Lab4_top ; work         ;
+;    |Bidir_shift_reg:Registerinst1|     ; 4 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|Bidir_shift_reg:Registerinst1     ; Bidir_shift_reg      ; work         ;
+;    |Compx4:compinst_X|                 ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|Compx4:compinst_X                 ; Compx4               ; work         ;
+;    |Compx4:compinst_Y|                 ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|Compx4:compinst_Y                 ; Compx4               ; work         ;
+;    |Mealy_XY:mealyinst|                ; 30 (30)             ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|Mealy_XY:mealyinst                ; Mealy_XY             ; work         ;
+;    |Moore_Extender:moore1inst|         ; 18 (18)             ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|Moore_Extender:moore1inst         ; Moore_Extender       ; work         ;
+;    |Moore_Grappler:moore2inst|         ; 5 (5)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|Moore_Grappler:moore2inst         ; Moore_Grappler       ; work         ;
+;    |U_D_Bin_Counter8bit:Counterinst_X| ; 6 (6)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|U_D_Bin_Counter8bit:Counterinst_X ; U_D_Bin_Counter8bit  ; work         ;
+;    |U_D_Bin_Counter8bit:Counterinst_Y| ; 6 (6)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|U_D_Bin_Counter8bit:Counterinst_Y ; U_D_Bin_Counter8bit  ; work         ;
++----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------+----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------+
+; State Machine - |LogicalStep_Lab4_top|Moore_Grappler:moore2inst|current_state                        ;
++---------------------------+---------------------------+-------------------------+--------------------+
+; Name                      ; current_state.GRAP_CLOSED ; current_state.GRAP_OPEN ; current_state.INIT ;
++---------------------------+---------------------------+-------------------------+--------------------+
+; current_state.INIT        ; 0                         ; 0                       ; 0                  ;
+; current_state.GRAP_OPEN   ; 0                         ; 1                       ; 1                  ;
+; current_state.GRAP_CLOSED ; 1                         ; 0                       ; 1                  ;
++---------------------------+---------------------------+-------------------------+--------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |LogicalStep_Lab4_top|Moore_Extender:moore1inst|current_state                                                          ;
++------------------------------+-------------------------+--------------------------+------------------------------+---------------------+
+; Name                         ; current_state.extending ; current_state.retracting ; current_state.fully_extended ; current_state.start ;
++------------------------------+-------------------------+--------------------------+------------------------------+---------------------+
+; current_state.start          ; 0                       ; 0                        ; 0                            ; 0                   ;
+; current_state.fully_extended ; 0                       ; 0                        ; 1                            ; 1                   ;
+; current_state.retracting     ; 0                       ; 1                        ; 0                            ; 1                   ;
+; current_state.extending      ; 1                       ; 0                        ; 0                            ; 1                   ;
++------------------------------+-------------------------+--------------------------+------------------------------+---------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------+
+; State Machine - |LogicalStep_Lab4_top|Mealy_XY:mealyinst|current_state                                             ;
++-------------------------+---------------------+--------------------+-------------------------+---------------------+
+; Name                    ; current_state.error ; current_state.move ; current_state.on_target ; current_state.start ;
++-------------------------+---------------------+--------------------+-------------------------+---------------------+
+; current_state.start     ; 0                   ; 0                  ; 0                       ; 0                   ;
+; current_state.on_target ; 0                   ; 0                  ; 1                       ; 1                   ;
+; current_state.move      ; 0                   ; 1                  ; 0                       ; 1                   ;
+; current_state.error     ; 1                   ; 0                  ; 0                       ; 1                   ;
++-------------------------+---------------------+--------------------+-------------------------+---------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                 ;
++-----------------------------------------------------+--------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                  ; Free of Timing Hazards ;
++-----------------------------------------------------+--------------------------------------+------------------------+
+; Mealy_XY:mealyinst|error_led                        ; Mealy_XY:mealyinst|clk_en_y          ; yes                    ;
+; Moore_Grappler:moore2inst|leds1                     ; Moore_Grappler:moore2inst|leds1      ; yes                    ;
+; Moore_Grappler:moore2inst|GRAP_ON                   ; pb[0]                                ; yes                    ;
+; Moore_Extender:moore1inst|left_right                ; Moore_Extender:moore1inst|Selector1  ; yes                    ;
+; Moore_Extender:moore1inst|clk_en                    ; Moore_Extender:moore1inst|Selector8  ; yes                    ;
+; Mealy_XY:mealyinst|clk_en_y                         ; Mealy_XY:mealyinst|clk_en_y          ; yes                    ;
+; Mealy_XY:mealyinst|up_down_y                        ; Mealy_XY:mealyinst|up_down_y         ; yes                    ;
+; Mealy_XY:mealyinst|clk_en_x                         ; Mealy_XY:mealyinst|clk_en_y          ; yes                    ;
+; Mealy_XY:mealyinst|up_down_x                        ; Mealy_XY:mealyinst|up_down_x         ; yes                    ;
+; Moore_Extender:moore1inst|EXT_OUT                   ; Moore_Extender:moore1inst|Selector10 ; yes                    ;
+; Moore_Extender:moore1inst|GRAP_ENBL                 ; Moore_Extender:moore1inst|Selector10 ; yes                    ;
+; Mealy_XY:mealyinst|extender_en                      ; Mealy_XY:mealyinst|clk_en_y          ; yes                    ;
+; Number of user-specified and inferred latches = 12  ;                                      ;                        ;
++-----------------------------------------------------+--------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                       ;
++-----------------------------------------------------+--------------------+
+; Register name                                       ; Reason for Removal ;
++-----------------------------------------------------+--------------------+
+; Moore_Grappler:moore2inst|current_state.GRAP_CLOSED ; Lost fanout        ;
+; Total Number of Removed Registers = 1               ;                    ;
++-----------------------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 22    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 22    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 10    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 30                          ;
+; cycloneiii_ff         ; 22                          ;
+;     CLR               ; 12                          ;
+;     ENA CLR           ; 10                          ;
+; cycloneiii_lcell_comb ; 82                          ;
+;     arith             ; 6                           ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 4                           ;
+;     normal            ; 76                          ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 20                          ;
+;         3 data inputs ; 21                          ;
+;         4 data inputs ; 34                          ;
+;                       ;                             ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 2.90                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+    Info: Processing started: Mon Jul 27 17:56:11 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off LogicalStep_Lab4 -c LogicalStep_Lab4_top
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file bidir_shift_reg.vhd
+    Info (12022): Found design unit 1: Bidir_shift_reg-one File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Bidir_shift_reg.vhd Line: 18
+    Info (12023): Found entity 1: Bidir_shift_reg File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Bidir_shift_reg.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file u_d_bin_counter8bit.vhd
+    Info (12022): Found design unit 1: U_D_Bin_Counter8bit-one File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/U_D_Bin_Counter8bit.vhd Line: 18
+    Info (12023): Found entity 1: U_D_Bin_Counter8bit File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/U_D_Bin_Counter8bit.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file moore_sm2.vhd
+    Info (12022): Found design unit 1: MOORE_SM2-SM File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/MOORE_SM2.vhd Line: 14
+    Info (12023): Found entity 1: MOORE_SM2 File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/MOORE_SM2.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file mealy.vhd
+    Info (12022): Found design unit 1: Mealy-SM File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Mealy.vhd Line: 18
+    Info (12023): Found entity 1: Mealy File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Mealy.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file moore1.vhd
+    Info (12022): Found design unit 1: moore1-SM File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Moore1.vhd Line: 18
+    Info (12023): Found entity 1: moore1 File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Moore1.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file mealy_xy.vhd
+    Info (12022): Found design unit 1: Mealy_XY-SM File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Mealy_XY.vhd Line: 20
+    Info (12023): Found entity 1: Mealy_XY File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Mealy_XY.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file moore_extender.vhd
+    Info (12022): Found design unit 1: Moore_Extender-SM File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Moore_Extender.vhd Line: 19
+    Info (12023): Found entity 1: Moore_Extender File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Moore_Extender.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file moore_grappler.vhd
+    Info (12022): Found design unit 1: Moore_Grappler-SM File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Moore_Grappler.vhd Line: 16
+    Info (12023): Found entity 1: Moore_Grappler File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Moore_Grappler.vhd Line: 5
+Warning (12019): Can't analyze file -- file Vhdl1.vhd is missing
+Warning (12125): Using design file logicalstep_lab4_top.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: LogicalStep_Lab4_top-Circuit File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/logicalstep_lab4_top.vhd Line: 16
+    Info (12023): Found entity 1: LogicalStep_Lab4_top File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/logicalstep_lab4_top.vhd Line: 5
+Info (12127): Elaborating entity "LogicalStep_Lab4_top" for the top level hierarchy
+Warning (10873): Using initial value X (don't care) for net "leds[2]" at logicalstep_lab4_top.vhd(12) File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/logicalstep_lab4_top.vhd Line: 12
+Info (12128): Elaborating entity "U_D_Bin_Counter8bit" for hierarchy "U_D_Bin_Counter8bit:Counterinst_X" File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/logicalstep_lab4_top.vhd Line: 122
+Warning (12125): Using design file compx4.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: Compx4-fourbitcomparator File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/compx4.vhd Line: 17
+    Info (12023): Found entity 1: Compx4 File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/compx4.vhd Line: 7
+Info (12128): Elaborating entity "Compx4" for hierarchy "Compx4:compinst_X" File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/logicalstep_lab4_top.vhd Line: 125
+Warning (12125): Using design file compx1.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: Compx1-comparator File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/compx1.vhd Line: 17
+    Info (12023): Found entity 1: Compx1 File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/compx1.vhd Line: 7
+Info (12128): Elaborating entity "Compx1" for hierarchy "Compx4:compinst_X|Compx1:bit3" File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/compx4.vhd Line: 37
+Info (12128): Elaborating entity "Mealy_XY" for hierarchy "Mealy_XY:mealyinst" File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/logicalstep_lab4_top.vhd Line: 128
+Warning (10631): VHDL Process Statement warning at Mealy_XY.vhd(154): inferring latch(es) for signal or variable "clk_en_x", which holds its previous value in one or more paths through the process File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Mealy_XY.vhd Line: 154
+Warning (10631): VHDL Process Statement warning at Mealy_XY.vhd(154): inferring latch(es) for signal or variable "clk_en_y", which holds its previous value in one or more paths through the process File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Mealy_XY.vhd Line: 154
+Warning (10631): VHDL Process Statement warning at Mealy_XY.vhd(154): inferring latch(es) for signal or variable "extender_en", which holds its previous value in one or more paths through the process File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Mealy_XY.vhd Line: 154
+Warning (10631): VHDL Process Statement warning at Mealy_XY.vhd(154): inferring latch(es) for signal or variable "error_led", which holds its previous value in one or more paths through the process File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Mealy_XY.vhd Line: 154
+Warning (10631): VHDL Process Statement warning at Mealy_XY.vhd(154): inferring latch(es) for signal or variable "up_down_x", which holds its previous value in one or more paths through the process File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Mealy_XY.vhd Line: 154
+Warning (10631): VHDL Process Statement warning at Mealy_XY.vhd(154): inferring latch(es) for signal or variable "up_down_y", which holds its previous value in one or more paths through the process File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Mealy_XY.vhd Line: 154
+Info (10041): Inferred latch for "up_down_y" at Mealy_XY.vhd(154) File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Mealy_XY.vhd Line: 154
+Info (10041): Inferred latch for "up_down_x" at Mealy_XY.vhd(154) File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Mealy_XY.vhd Line: 154
+Info (10041): Inferred latch for "error_led" at Mealy_XY.vhd(154) File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Mealy_XY.vhd Line: 154
+Info (10041): Inferred latch for "extender_en" at Mealy_XY.vhd(154) File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Mealy_XY.vhd Line: 154
+Info (10041): Inferred latch for "clk_en_y" at Mealy_XY.vhd(154) File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Mealy_XY.vhd Line: 154
+Info (10041): Inferred latch for "clk_en_x" at Mealy_XY.vhd(154) File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Mealy_XY.vhd Line: 154
+Info (12128): Elaborating entity "Bidir_shift_reg" for hierarchy "Bidir_shift_reg:Registerinst1" File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/logicalstep_lab4_top.vhd Line: 129
+Warning (10492): VHDL Process Statement warning at Bidir_shift_reg.vhd(30): signal "CLK_EN" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Bidir_shift_reg.vhd Line: 30
+Info (12128): Elaborating entity "Moore_Extender" for hierarchy "Moore_Extender:moore1inst" File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/logicalstep_lab4_top.vhd Line: 131
+Warning (10492): VHDL Process Statement warning at Moore_Extender.vhd(91): signal "pb" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Moore_Extender.vhd Line: 91
+Warning (10492): VHDL Process Statement warning at Moore_Extender.vhd(104): signal "pb" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Moore_Extender.vhd Line: 104
+Warning (10631): VHDL Process Statement warning at Moore_Extender.vhd(80): inferring latch(es) for signal or variable "EXT_OUT", which holds its previous value in one or more paths through the process File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Moore_Extender.vhd Line: 80
+Warning (10631): VHDL Process Statement warning at Moore_Extender.vhd(80): inferring latch(es) for signal or variable "clk_en", which holds its previous value in one or more paths through the process File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Moore_Extender.vhd Line: 80
+Warning (10631): VHDL Process Statement warning at Moore_Extender.vhd(80): inferring latch(es) for signal or variable "GRAP_ENBL", which holds its previous value in one or more paths through the process File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Moore_Extender.vhd Line: 80
+Warning (10631): VHDL Process Statement warning at Moore_Extender.vhd(80): inferring latch(es) for signal or variable "left_right", which holds its previous value in one or more paths through the process File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Moore_Extender.vhd Line: 80
+Info (10041): Inferred latch for "left_right" at Moore_Extender.vhd(80) File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Moore_Extender.vhd Line: 80
+Info (10041): Inferred latch for "GRAP_ENBL" at Moore_Extender.vhd(80) File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Moore_Extender.vhd Line: 80
+Info (10041): Inferred latch for "clk_en" at Moore_Extender.vhd(80) File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Moore_Extender.vhd Line: 80
+Info (10041): Inferred latch for "EXT_OUT" at Moore_Extender.vhd(80) File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Moore_Extender.vhd Line: 80
+Info (12128): Elaborating entity "Moore_Grappler" for hierarchy "Moore_Grappler:moore2inst" File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/logicalstep_lab4_top.vhd Line: 132
+Warning (10631): VHDL Process Statement warning at Moore_Grappler.vhd(67): inferring latch(es) for signal or variable "GRAP_ON", which holds its previous value in one or more paths through the process File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Moore_Grappler.vhd Line: 67
+Warning (10631): VHDL Process Statement warning at Moore_Grappler.vhd(67): inferring latch(es) for signal or variable "leds1", which holds its previous value in one or more paths through the process File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Moore_Grappler.vhd Line: 67
+Info (10041): Inferred latch for "leds1" at Moore_Grappler.vhd(67) File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Moore_Grappler.vhd Line: 67
+Info (10041): Inferred latch for "GRAP_ON" at Moore_Grappler.vhd(67) File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Moore_Grappler.vhd Line: 67
+Warning (13012): Latch Mealy_XY:mealyinst|error_led has unsafe behavior File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Mealy_XY.vhd Line: 15
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Mealy_XY:mealyinst|current_state.on_target File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Mealy_XY.vhd Line: 26
+Warning (13012): Latch Moore_Extender:moore1inst|clk_en has unsafe behavior File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Moore_Extender.vhd Line: 12
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Moore_Extender:moore1inst|current_state.start File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Moore_Extender.vhd Line: 24
+Warning (13012): Latch Mealy_XY:mealyinst|clk_en_y has unsafe behavior File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Mealy_XY.vhd Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Mealy_XY:mealyinst|current_state.move File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Mealy_XY.vhd Line: 26
+Warning (13012): Latch Mealy_XY:mealyinst|up_down_y has unsafe behavior File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Mealy_XY.vhd Line: 12
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Compx4:compinst_Y|fourALTB File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/compx4.vhd Line: 12
+Warning (13012): Latch Mealy_XY:mealyinst|clk_en_x has unsafe behavior File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Mealy_XY.vhd Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Mealy_XY:mealyinst|current_state.move File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Mealy_XY.vhd Line: 26
+Warning (13012): Latch Mealy_XY:mealyinst|up_down_x has unsafe behavior File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Mealy_XY.vhd Line: 12
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Compx4:compinst_X|fourALTB File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/compx4.vhd Line: 12
+Warning (13012): Latch Mealy_XY:mealyinst|extender_en has unsafe behavior File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Mealy_XY.vhd Line: 13
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Mealy_XY:mealyinst|current_state.on_target File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/Mealy_XY.vhd Line: 26
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "leds[2]" is stuck at GND File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/logicalstep_lab4_top.vhd Line: 12
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "pb[3]" File: C:/Users/Shunethra/Documents/2B/ECE124/Labs/Lab-4/Lab4/logicalstep_lab4_top.vhd Line: 10
+Info (21057): Implemented 111 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 14 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 81 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 39 warnings
+    Info: Peak virtual memory: 4827 megabytes
+    Info: Processing ended: Mon Jul 27 17:56:24 2020
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:33
+
+
