@@ -1,4 +1,4 @@
-# Robotic-Arm-Controller
+# FPGA Projects
 
 Developed a Robotic Arm Controller in VHDL code to position a robotic arm in two dimensions by implementing an extender and grappler. 
 Programmed the FPGA chip and tested the RAC circuit by applying various target coordinates and error conditions, thereby arriving at the right output results. 
